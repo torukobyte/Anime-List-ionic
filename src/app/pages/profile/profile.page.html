@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title style="margin: 5%;">{{userName}}</ion-title>
+        <ion-icon *ngIf="isAdmin" style="float: right;margin-top: -12.5%;margin-right: 10%;" (click)="refresh()" size="large"
+                  color="danger" name="reload-circle-sharp"></ion-icon>
+        <ion-buttons slot="start">
+            <ion-back-button text="Geri" color="danger"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-item-group *ngIf="!isAdmin">
+        <ion-item>
+            <ion-label position="fixed" color="warning">istek kutusu:</ion-label>
+            <ion-input [(ngModel)]="istekler" clear-input clear-on-edit type="email" inputmode="text"
+                       autofocus="autofocus" required
+                       color="success" placeholder="örn: dragon ball"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button [disabled]="istekler == null || istekler == ''"  (click)="istekKutusu()" color="warning" type="submit" style="width: 50%;">Gönder</ion-button>
+        <br><br>
+        <ion-img style="width: 70%;border: 2px solid #8a2633;display: block;margin: auto;"
+                 src="https://i.pinimg.com/originals/0d/79/b9/0d79b9cbc3ab977b82c346b84dace477.gif"></ion-img>
+    </ion-item-group>
+    <br>
+    <ion-item-group *ngIf="isAdmin">
+        <ion-label style="color:  #FF4961;font-size: 20px;">istek Animeler</ion-label>
+        <ion-label *ngFor="let x of istekleriGetir">
+            <ion-list style="border: 1px solid #FF4961; background-color: #ff496134;"
+                      inset="true">
+                <ion-item style="color: #ffffff;">
+                    {{x}}
+                    <ion-icon
+                            style="position: absolute; right: 5%;" name="trash" color="danger"
+                            (click)="istekleriTemizle(x)"></ion-icon>
+                </ion-item>
+            </ion-list>
+        </ion-label>
+    </ion-item-group>
+</ion-content>
+<ion-footer style="margin-bottom: 5px;text-align: center;">
+    <ion-button (click)="logOut()" strong="" color="danger" style="width: 60%;">Çıkış Yap</ion-button>
+    <ion-button *ngIf="isAdmin" strong="" color="success" [routerLink]="['add-anime']" style="width: 90%;">Anime Ekle
+    </ion-button>
+</ion-footer>

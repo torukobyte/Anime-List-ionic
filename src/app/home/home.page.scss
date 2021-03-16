@@ -1,3 +1,18 @@
+ion-content {
+  --ion-background-color: #121212;
+  --ion-background-color-rgb: 18, 18, 18;
+}
+
+ion-tab-bar{
+  --ion-background-color: #1F1F1F;
+}
+
+ion-tabs{
+  --ion-background-color: #1F1F1F;
+  --ion-text-color: #ffffff;
+  text-align: center;
+}
+
 #container {
   text-align: center;
 
@@ -17,7 +32,7 @@
   font-size: 16px;
   line-height: 22px;
 
-  color: #8c8c8c;
+  color: #121212;
 
   margin: 0;
 }
@@ -25,3 +40,8 @@
 #container a {
   text-decoration: none;
 }
+ion-tab-button {
+  --color: var(--ion-color-medium);
+  --color-selected: var(--ion-color-danger);
+}
+

@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title style="margin: 5%;">Anime Listem</ion-title>
+        <ion-icon style="float: right;margin-top: -12.5%;margin-right: 10%;" (click)="refresh()" size="large"
+                  color="danger" name="reload-circle-sharp"></ion-icon>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-label *ngFor="let x of favorites">
+        <ion-list
+                style="border: 1px solid #FF4961; background-color: #ff496134;"
+                inset="true">
+            <ion-item style="color: #ffffff;">
+                {{x}}
+                <ion-icon
+                        style="position: absolute; right: 5%;"
+                        name="trash"
+                        color="danger"
+                        (click)="animeListemdenSil(x)"></ion-icon>
+            </ion-item>
+        </ion-list>
+    </ion-label>
+</ion-content>

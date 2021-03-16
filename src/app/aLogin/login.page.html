@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Giriş Yap</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align: center;">
+    <ion-item >
+        <ion-label position="fixed" color="warning">E-Posta:</ion-label>
+        <ion-input clear-input [(ngModel)]="user.eposta" type="email" inputmode="email" autofocus="autofocus" required color="success"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="fixed" type="password" color="warning">Şifre:</ion-label>
+        <ion-input clear-input [(ngModel)]="user.password" type="password" minlength="8" required color="success"></ion-input>
+    </ion-item>
+    <br>
+    <ion-grid style="text-align: center;">
+        <ion-button [disabled]="user.eposta == null || user.password == null || user.eposta == '' || user.password == '' " (click)="login(user)" color="success" type="submit" style="width: 70%;">Giriş Yap</ion-button>
+        <br><br>
+        <ion-button routerLink="/register" color="warning" type="submit" style="width: 70%;">Kayıt Ol</ion-button>
+    </ion-grid>
+</ion-content>

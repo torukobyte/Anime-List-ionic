@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Anime Güncelle</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button text="Geri" color="success"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="floating" color="warning">Ad:</ion-label>
+        <ion-input clear-input [(ngModel)]="anime.title" type="text" autofocus="autofocus" color="success"
+                   required></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating" color="warning">Yazar:</ion-label>
+        <ion-input clear-input [(ngModel)]="anime.author" type="text" color="success"
+                   required></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+        <ion-label position="floating" color="warning">Özet:</ion-label>
+        <ion-textarea [(ngModel)]="anime.summary" type="text" minlength="10" color="success"
+                      required></ion-textarea>
+    </ion-item>
+    <br>
+    <ion-item>
+        <ion-label position="floating" color="warning">Resim Link:</ion-label>
+        <ion-input clear-input  [(ngModel)]="anime.images" type="text" color="success"
+                   required></ion-input>
+    </ion-item>
+    <br>
+
+    <ion-grid style="text-align: center;">
+        <ion-button (click)="editAnime(anime)" color="success" type="submit" style="width: 90%;">Güncelle</ion-button>
+    </ion-grid>
+
+</ion-content>

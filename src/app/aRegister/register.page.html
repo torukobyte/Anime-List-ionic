@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Kayıt Ol</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button text="Geri" color="success"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content style="text-align: center;">
+    <ion-item>
+        <ion-label position="floating" color="warning">Kullanıcı Adı:</ion-label>
+        <ion-input clear-input [(ngModel)]="username" type="text" inputmode="text" autofocus="autofocus" required
+                   color="success"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating" color="warning">E-Posta:</ion-label>
+        <ion-input clear-input [(ngModel)]="user.eposta" type="email" inputmode="email" autofocus="autofocus" required
+                   color="success"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating" type="password" color="warning">Şifre:</ion-label>
+        <ion-input clear-input [(ngModel)]="user.password" type="password" minlength="8" required color="success"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating" type="password" color="warning">Şifre Onay:</ion-label>
+        <ion-input clear-input [(ngModel)]="cPassword" type="password" minlength="8" required color="success"></ion-input>
+    </ion-item>
+    <br>
+
+    <ion-grid style="text-align: center;">
+        <ion-button [disabled]="user.eposta == null || user.password == null || username == null || cPassword == null || user.eposta == '' || user.password == '' || username == '' || cPassword == ''" (click)="register(user)" color="warning" type="submit" style="width: 70%;">Kayıt Ol</ion-button>
+    </ion-grid>
+
+</ion-content>
+

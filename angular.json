@@ -31,9 +31,12 @@
                 "output": "./svg"
               }
             ],
-            "styles": [
+            "styles":
+            [
+
               {
-                "input": "src/theme/variables.scss"
+                "input": "src/theme/variables.scss",
+
               },
               {
                 "input": "src/global.scss"
@@ -185,3 +188,4 @@
     }
   }
 }
+
